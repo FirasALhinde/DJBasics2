@@ -4,7 +4,14 @@ from django.db import models
 
 # Create your models here.
 
-
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
 
 
 class Post (models.Model):
@@ -23,11 +30,3 @@ class Post (models.Model):
         verbose_name = "My Post"
         ordering = ['-publish_date']
 
-class Category(models.Model):
-    name = models.CharField(max_length=30)
-    def __str__(self) -> str:
-        return self.name
-    
-    class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"
