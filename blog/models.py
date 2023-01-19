@@ -8,7 +8,7 @@ class Post(models.Model):
     publish_date = models.DateTimeField(default=timezone.now)
     update_date = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='posts/')
-    category = models.ForeignKey('Category',on_delete=models.CASCADE)
+    category = models.ForeignKey('Category',related_name='post_category',on_delete=models.CASCADE)
     def __str__(self):
         return self.title
     
