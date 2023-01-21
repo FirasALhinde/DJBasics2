@@ -1,5 +1,8 @@
-<h1>post list</h1>
-{% for post in all_post %}
-<a href="{% url 'blog:post_detail' post.id %}"><h3>{{post.title}}</h3></a>
+<a href="{% url 'blog:cbv_list' %}"><h1>Our Blog</h1></a>
+<a href="{% url 'blog:cbv_new' %}">New Post</a>
+
+<hr />
+{% for post in object_list %}
+<a href="{% url 'blog:cbv_detail' post.id %}"><h3>{{post.title}}</h3></a>
 
 {% endfor %}
